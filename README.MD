@@ -81,5 +81,3 @@ Abre un issue para discutir cambios o envía un PR con mejoras claras y pruebas 
 Licencia: **ISC** (ver `package.json`).
 
 ---
-
-Si necesitas, puedo aplicar una versión completa y más estilizada del `README` (con tabla de contenidos, badges, y secciones ampliadas).
