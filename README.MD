@@ -1,48 +1,41 @@
 Este proyecto es el backend para una aplicación de reservas de menús en un restaurante a través de un bot de Telegram. El backend está desarrollado en Node.js y utiliza MongoDB como base de datos.
 
-Encontraréis toda la [información sobre el bot de telegram aquí](https://github.com/yagop/node-telegram-bot-api/tree/master)
+He reorganizado y mejorado la documentación para ofrecer una guía clara de instalación, configuración y ejecución.
 
-## Requisitos
+## Requisitos ⚙️
 
-- Node.js (v14.x o superior)
-- MongoDB
-- Credenciales del bot de Telegram
+- Node.js v14 o superior
+- MongoDB (local o en la nube)
+- Token del bot de Telegram
 
-## Instalación
+## Instalación y configuración 🚀
 
-Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local:
-
-### 1. Clonar el repositorio
+1. Clona el repositorio:
 
 ```bash
 git clone <URL_del_repositorio>
-cd <nombre_del_directorio>
+cd rojo-backend
 ```
 
-### 2. Instalar dependencias
-
-Instala las dependencias necesarias ejecutando el siguiente comando:
+2. Instala dependencias:
 
 ```bash
 npm install
 ```
 
-### 3. Crear archivo .env
+3. Crea y configura un archivo `.env` en la raíz del proyecto (nunca subas este archivo al repositorio):
 
-Debes crear un archivo .env en la raíz del proyecto con las credenciales de tu bot de Telegram y la conexión a MongoDB. Aquí tienes un ejemplo de cómo debería verse:
-
-```bash
-TELEGRAM_BOT_TOKEN="7229122405:AAGK9xMRjnJc57saF_Z7IGMoeL7Ipg0GLZg"
-MONGODB_URI="mongodb://localhost:27017/nombre_de_tu_base_de_datos"
-
-
+```env
+TELEGRAM_BOT_TOKEN="<TU_TOKEN_AQUI>"
+MONGODB_URI="mongodb://localhost:27017/tu_basedatos"
+PORT=3000
 ```
 
-Asegúrate de reemplazar los valores de ejemplo con las credenciales reales de tu bot y la URL de conexión a MongoDB.
+> **Importante:** sustituye `<TU_TOKEN_AQUI>` por el token real de tu bot y añade `.env` a `.gitignore`.
 
-### 4. Conectar con MongoDB
+## Conexión con MongoDB
 
-Dentro de tu código, deberás asegurarte de conectar MongoDB utilizando la URI especificada en el archivo .env. Un ejemplo básico de conexión puede verse así:
+Ejemplo de conexión con Mongoose (ya presente en el código):
 
 ```javascript
 const mongoose = require("mongoose");
@@ -57,10 +50,36 @@ mongoose
   .catch((err) => console.error("Error conectando a MongoDB:", err));
 ```
 
-### 5. Desarrollo del backend
+## Ejecución ▶️
 
-El backend debe estar diseñado para manejar las siguientes funcionalidades:
+- Desarrollo (con recarga automática):
 
-- Recepción de mensajes y comandos del bot de Telegram.
-- Gestión de reservas de menús.
-- Almacenamiento de datos de usuarios y reservas en MongoDB.
+```bash
+npm run dev
+```
+
+- Producción:
+
+```bash
+node index.js
+```
+
+> Si prefieres, añade un script `start` en `package.json` con `"start": "node index.js"`.
+
+## Funcionalidades principales
+
+- Recepción y manejo de comandos y mensajes desde Telegram.
+- Gestión de reservas de menús por usuario.
+- Persistencia de usuarios y reservas en MongoDB.
+
+## Contribuir 🤝
+
+Abre un issue para discutir cambios o envía un PR con mejoras claras y pruebas cuando sea posible.
+
+## Licencia 📄
+
+Licencia: **ISC** (ver `package.json`).
+
+---
+
+Si necesitas, puedo aplicar una versión completa y más estilizada del `README` (con tabla de contenidos, badges, y secciones ampliadas).
